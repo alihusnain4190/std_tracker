@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { studentBlock } from "../utils";
-import SortByStudent from "../Component/SortByStudent";
+import OrderByStudent from "../Component/OrderByStudent";
 const AllStudent = () => {
   const [students, setStudents] = useState([]);
   const [isLoading, setLoading] = useState(true);
@@ -22,6 +22,7 @@ const AllStudent = () => {
     fetchAllStudent();
   }, [sort]);
   const setSortStudent = (value) => {
+  
     setSort(value);
   };
 
@@ -29,7 +30,7 @@ const AllStudent = () => {
   if (isLoading === true) return "loading";
   return (
     <div>
-      <SortByStudent setSortStudent={setSortStudent} sort={sort} />
+      <OrderByStudent setSortStudent={setSortStudent} sort={sort} />
       <table>
         <thead>
           <tr>
@@ -40,14 +41,16 @@ const AllStudent = () => {
             <th>Starting Block</th>
           </tr>
         </thead>
-        {students.students.map((std) => (
-          <tr>
-            <td>{std.name}</td>
+        <tbody>
+          {students.students.map((std) => (
+            <tr key={std._id}>
+              <td>{std.name}</td>
 
-            <td>{std.startingCohort}</td>
-            <td>{studentBlock(std.currentBlock)}</td>
-          </tr>
-        ))}
+              <td>{std.startingCohort}</td>
+              <td>{studentBlock(std.currentBlock)}</td>
+            </tr>
+          ))}
+        </tbody>
       </table>
     </div>
   );

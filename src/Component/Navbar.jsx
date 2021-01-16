@@ -13,6 +13,9 @@ const Navbar = () => {
       <div>
         <Link to="/graduate">Graduate</Link>
       </div>
+      <div>
+        <Link to="/block">Block</Link>
+      </div>
     </div>
   );
 };

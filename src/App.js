@@ -5,6 +5,7 @@ import { Router } from "@reach/router";
 import Landing from "./Pages/Landing";
 import AllStudent from "./Pages/AllStudent";
 import GraduateStudent from "./Pages/GraduateStudent";
+import StudentInBlock from "./Pages/StudentInBlock";
 function App() {
   return (
     <div className="App">
@@ -13,6 +14,7 @@ function App() {
         <Landing path="/" />
         <AllStudent path="/students" />
         <GraduateStudent path="/graduate" />
+        <StudentInBlock path="/block" />
       </Router>
       <Footer />
     </div>
