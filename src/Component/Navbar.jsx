@@ -10,6 +10,9 @@ const Navbar = () => {
       <div>
         <Link to="/students">All Student</Link>
       </div>
+      <div>
+        <Link to="/graduate">Graduate</Link>
+      </div>
     </div>
   );
 };
