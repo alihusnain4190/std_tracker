@@ -6,6 +6,7 @@ import Landing from "./Pages/Landing";
 import AllStudent from "./Pages/AllStudent";
 import GraduateStudent from "./Pages/GraduateStudent";
 import StudentInBlock from "./Pages/StudentInBlock";
+import UpdateStudent from "./Pages/UpdateStudent";
 function App() {
   return (
     <div className="App">
@@ -15,6 +16,7 @@ function App() {
         <AllStudent path="/students" />
         <GraduateStudent path="/graduate" />
         <StudentInBlock path="/block" />
+        <UpdateStudent path="students/update/:id"></UpdateStudent>
       </Router>
       <Footer />
     </div>

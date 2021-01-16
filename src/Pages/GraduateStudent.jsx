@@ -1,16 +1,20 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import SortByName from "../Component/SortByName";
 import { studentBlock } from "../utils";
 import OrderByStudent from "../Component/OrderByStudent";
+import DisplayStudent from "../Component/DisplayStudent";
 const GraduateStudent = () => {
   const [graduate, setGraduate] = useState([]);
   const [isLoading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [sort, setSort] = useState("");
+  const [sortData, setSortData] = useState("name");
+
   const fetchGraduate = async () => {
     try {
       const { data: students } = await axios.get(
-        `https://nc-student-tracker.herokuapp.com/api/students?graduated=true`
+        `https://nc-student-tracker.herokuapp.com/api/students?graduated=true&?order=${sort}&sort_by=${sortData}`
       );
       setGraduate(students);
       setLoading(false);
@@ -20,35 +24,24 @@ const GraduateStudent = () => {
   };
   useEffect(() => {
     fetchGraduate();
-  }, []);
+  }, [sort, sortData]);
   const setSortStudent = (value) => {
     setSort(value);
   };
 
+  const setSortDataByNameAndCohort = (value) => {
+    setSortData(value);
+  };
   if (isLoading === true) return "...loading";
   if (error) return error;
   return (
     <section>
       <OrderByStudent setSortStudent={setSortStudent} sort={sort} />
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Starting Cohort</th>
-            <th>Block</th>
-          </tr>
-        </thead>
-        <tbody>
-          {graduate.students.map((std) => (
-            <tr key={std._id}>
-              <td>{std.name}</td>
-
-              <td>{std.startingCohort}</td>
-              <td>{studentBlock(std.currentBlock)}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <SortByName
+        sortData={sortData}
+        setSortDataByNameAndCohort={setSortDataByNameAndCohort}
+      />
+      <DisplayStudent students={graduate.students} />
     </section>
   );
 };

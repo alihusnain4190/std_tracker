@@ -2,20 +2,22 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import DisplayStudent from "../Component/DisplayStudent";
 import OrderByStudent from "../Component/OrderByStudent";
+import SortByName from "../Component/SortByName";
 const StudentInBlock = () => {
   const [block, setBlocks] = useState([]);
   const [isLoading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [section, setSection] = useState("fun");
   const [sort, setSort] = useState("");
+  const [sortData, setSortData] = useState("name");
 
   const fetchStudentBlock = async () => {
-    console.log("ai");
+    
     try {
       const {
         data: { students },
       } = await axios.get(
-        `https://nc-student-tracker.herokuapp.com/api/students?block=${section}&order=${sort}`
+        `https://nc-student-tracker.herokuapp.com/api/students?block=${section}&order=${sort}&sort_by=${sortData}`
       );
       setBlocks(students);
       setLoading(false);
@@ -25,7 +27,7 @@ const StudentInBlock = () => {
   };
   useEffect(() => {
     fetchStudentBlock();
-  }, [section, sort]);
+  }, [section, sort, sortData]);
   const handleChange = (e) => {
     setSection(e.target.value);
   };
@@ -33,6 +35,9 @@ const StudentInBlock = () => {
     setSort(value);
   };
 
+  const setSortDataByNameAndCohort = (value) => {
+    setSortData(value);
+  };
   if (isLoading === true) return "...loading";
   if (error) return error;
   return (
@@ -48,6 +53,11 @@ const StudentInBlock = () => {
       </div>
 
       <OrderByStudent setSortStudent={setSortStudent} sort={sort} />
+      <SortByName
+        sortData={sortData}
+        setSortDataByNameAndCohort={setSortDataByNameAndCohort}
+      />
+
       <DisplayStudent students={block} />
     </section>
   );

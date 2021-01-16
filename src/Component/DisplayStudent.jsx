@@ -1,7 +1,7 @@
 import React from "react";
 import { studentBlock } from "../utils";
+import { Link } from "@reach/router";
 const DisplayStudent = ({ students }) => {
-  console.log(students);
   return (
     <div>
       <table>
@@ -21,6 +21,7 @@ const DisplayStudent = ({ students }) => {
 
               <td>{std.startingCohort}</td>
               <td>{studentBlock(std.currentBlock)}</td>
+              <Link to={`update/${std._id}`}>update</Link>
             </tr>
           ))}
         </tbody>

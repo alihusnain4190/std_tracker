@@ -2,15 +2,18 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { studentBlock } from "../utils";
 import OrderByStudent from "../Component/OrderByStudent";
+import SortByName from "../Component/SortByName";
+import DisplayStudent from "../Component/DisplayStudent";
 const AllStudent = () => {
   const [students, setStudents] = useState([]);
   const [isLoading, setLoading] = useState(true);
   const [sort, setSort] = useState("");
   const [error, setError] = useState("");
+  const [sortData, setSortData] = useState("name");
   const fetchAllStudent = async () => {
     try {
       const { data } = await axios.get(
-        `https://nc-student-tracker.herokuapp.com/api/students?order=${sort}`
+        `https://nc-student-tracker.herokuapp.com/api/students?order=${sort}&sort_by=${sortData}`
       );
       setStudents(data);
       setLoading(false);
@@ -20,38 +23,23 @@ const AllStudent = () => {
   };
   useEffect(() => {
     fetchAllStudent();
-  }, [sort]);
+  }, [sort, sortData]);
   const setSortStudent = (value) => {
-  
     setSort(value);
   };
-
+  const setSortDataByNameAndCohort = (value) => {
+    setSortData(value);
+  };
   if (error) return error;
   if (isLoading === true) return "loading";
   return (
     <div>
       <OrderByStudent setSortStudent={setSortStudent} sort={sort} />
-      <table>
-        <thead>
-          <tr>
-            <th>Student Name</th>
-
-            <th>Starting Cohort</th>
-
-            <th>Starting Block</th>
-          </tr>
-        </thead>
-        <tbody>
-          {students.students.map((std) => (
-            <tr key={std._id}>
-              <td>{std.name}</td>
-
-              <td>{std.startingCohort}</td>
-              <td>{studentBlock(std.currentBlock)}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <SortByName
+        sortData={sortData}
+        setSortDataByNameAndCohort={setSortDataByNameAndCohort}
+      />
+      <DisplayStudent students={students.students} />
     </div>
   );
 };
