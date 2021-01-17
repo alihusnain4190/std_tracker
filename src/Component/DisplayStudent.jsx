@@ -21,7 +21,7 @@ const DisplayStudent = ({ students }) => {
 
               <td>{std.startingCohort}</td>
               <td>{studentBlock(std.currentBlock)}</td>
-              <Link to={`update/${std._id}`}>update</Link>
+              <Link to={`single/${std._id}`}>update</Link>
             </tr>
           ))}
         </tbody>

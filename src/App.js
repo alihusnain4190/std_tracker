@@ -16,7 +16,7 @@ function App() {
         <AllStudent path="/students" />
         <GraduateStudent path="/graduate" />
         <StudentInBlock path="/block" />
-        <UpdateStudent path="students/update/:id"></UpdateStudent>
+        <UpdateStudent path="students/single/:id"></UpdateStudent>
       </Router>
       <Footer />
     </div>
