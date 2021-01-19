@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { studentBlock } from "../utils";
-import { Link } from "@reach/router";
+import axios from "axios";
 const DisplayStudent = ({ students }) => {
   return (
     <div>
@@ -21,7 +21,7 @@ const DisplayStudent = ({ students }) => {
 
               <td>{std.startingCohort}</td>
               <td>{studentBlock(std.currentBlock)}</td>
-              <Link to={`single/${std._id}`}>update</Link>
+              {/* <button onClick={() => handleDelete(std._id)}>Delete</button> */}
             </tr>
           ))}
         </tbody>

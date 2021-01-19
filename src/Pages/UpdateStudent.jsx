@@ -48,19 +48,10 @@ const UpdateStudent = (props) => {
             <tr key={std._id}>
               <td>{std.name}</td>
               <td>{std.number}</td>
-
-              <button
-                onClick={() => {
-                  hadnleClick(std._id);
-                }}
-              >
-                UpdateStudent
-              </button>
             </tr>
-          ))}
+          ))}+
         </tbody>
       </table>
-       <UpdateBlock id={id} /> 
     </section>
   );
 };
