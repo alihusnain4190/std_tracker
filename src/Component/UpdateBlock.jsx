@@ -23,6 +23,7 @@ const UpdateBlock = ({ id }) => {
           <input
             type="text"
             value={student}
+            value={student}
             ref={textInput}
             onChange={hadnleChange}
           ></input>

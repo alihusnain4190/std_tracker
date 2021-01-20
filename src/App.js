@@ -7,6 +7,7 @@ import AllStudent from "./Pages/AllStudent";
 import GraduateStudent from "./Pages/GraduateStudent";
 import StudentInBlock from "./Pages/StudentInBlock";
 import UpdateStudent from "./Pages/UpdateStudent";
+import AddStudent from "./Pages/AddStudent";
 function App() {
   return (
     <div className="App">
@@ -17,6 +18,7 @@ function App() {
         <GraduateStudent path="/graduate" />
         <StudentInBlock path="/block" />
         <UpdateStudent path="students/single/:id"></UpdateStudent>
+        <AddStudent path="/add"></AddStudent>
       </Router>
       <Footer />
     </div>
