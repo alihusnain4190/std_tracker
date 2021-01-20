@@ -12,7 +12,6 @@ const StudentInBlock = () => {
   const [sortData, setSortData] = useState("name");
 
   const fetchStudentBlock = async () => {
-    
     try {
       const {
         data: { students },
@@ -38,6 +37,17 @@ const StudentInBlock = () => {
   const setSortDataByNameAndCohort = (value) => {
     setSortData(value);
   };
+  const handleDelete = async (id) => {
+    try {
+      await axios.delete(
+        `https://nc-student-tracker.herokuapp.com/api/students/${id}`
+      );
+
+      await fetchStudentBlock();
+    } catch (err) {
+      setError("delete request is not working");
+    }
+  };
   if (isLoading === true) return "...loading";
   if (error) return error;
   return (
@@ -58,7 +68,7 @@ const StudentInBlock = () => {
         setSortDataByNameAndCohort={setSortDataByNameAndCohort}
       />
 
-      <DisplayStudent students={block} />
+      <DisplayStudent students={block} handleDelete={handleDelete} />
     </section>
   );
 };

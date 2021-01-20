@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { studentBlock } from "../utils";
-import axios from "axios";
-const DisplayStudent = ({ students }) => {
+const DisplayStudent = ({ students, handleDelete }) => {
+  const handleID = (id) => {
+    handleDelete(id);
+  };
   return (
     <div>
       <table>
@@ -21,7 +23,9 @@ const DisplayStudent = ({ students }) => {
 
               <td>{std.startingCohort}</td>
               <td>{studentBlock(std.currentBlock)}</td>
-              {/* <button onClick={() => handleDelete(std._id)}>Delete</button> */}
+              <td>
+                <button onClick={() => handleID(std._id)}>Delete</button>
+              </td>
             </tr>
           ))}
         </tbody>

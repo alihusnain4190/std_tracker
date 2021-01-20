@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { studentBlock } from "../utils";
 import OrderByStudent from "../Component/OrderByStudent";
 import SortByName from "../Component/SortByName";
 import DisplayStudent from "../Component/DisplayStudent";
@@ -30,6 +29,17 @@ const AllStudent = () => {
   const setSortDataByNameAndCohort = (value) => {
     setSortData(value);
   };
+  const handleDelete = async (id) => {
+    try {
+   await axios.delete(
+        `https://nc-student-tracker.herokuapp.com/api/students/${id}`
+      );
+
+      await fetchAllStudent();
+    } catch (err) {
+      console.log(err);
+    }
+  };
   if (error) return error;
   if (isLoading === true) return "loading";
   return (
@@ -39,7 +49,10 @@ const AllStudent = () => {
         sortData={sortData}
         setSortDataByNameAndCohort={setSortDataByNameAndCohort}
       />
-      <DisplayStudent students={students.students} />
+      <DisplayStudent
+        handleDelete={handleDelete}
+        students={students.students}
+      />
     </div>
   );
 };
