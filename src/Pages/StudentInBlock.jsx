@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
+import Loader from "react-loader-spinner";
 import axios from "axios";
-import DisplayStudent from "../Component/DisplayStudent";
-import OrderByStudent from "../Component/OrderByStudent";
-import SortByName from "../Component/SortByName";
+
+import { SortByName, OrderByStudent, DisplayStudent } from "../Component/index";
 const StudentInBlock = () => {
   const [block, setBlocks] = useState([]);
   const [isLoading, setLoading] = useState(true);
@@ -48,7 +48,9 @@ const StudentInBlock = () => {
       setError("delete request is not working");
     }
   };
-  if (isLoading === true) return "...loading";
+  if (isLoading === true)
+    return <Loader type="Rings" color="#00BFFF" height={80} width={80} />;
+
   if (error) return error;
   return (
     <section>

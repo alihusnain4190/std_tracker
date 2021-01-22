@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
+import Loader from "react-loader-spinner";
 import axios from "axios";
-import OrderByStudent from "../Component/OrderByStudent";
-import SortByName from "../Component/SortByName";
-import DisplayStudent from "../Component/DisplayStudent";
+import { OrderByStudent, SortByName, DisplayStudent } from "../Component/index";
+
 const AllStudent = () => {
   const [students, setStudents] = useState([]);
   const [isLoading, setLoading] = useState(true);
@@ -31,7 +31,7 @@ const AllStudent = () => {
   };
   const handleDelete = async (id) => {
     try {
-   await axios.delete(
+      await axios.delete(
         `https://nc-student-tracker.herokuapp.com/api/students/${id}`
       );
 
@@ -41,7 +41,8 @@ const AllStudent = () => {
     }
   };
   if (error) return error;
-  if (isLoading === true) return "loading";
+  if (isLoading === true)
+    return <Loader type="Rings" color="#00BFFF" height={80} width={80} />;
   return (
     <div>
       <OrderByStudent setSortStudent={setSortStudent} sort={sort} />

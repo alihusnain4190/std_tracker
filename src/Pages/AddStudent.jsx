@@ -44,7 +44,7 @@ class AddStudent extends Component {
     return (
       <>
         <main>
-          <div className="post">
+          <div >
             <h2>Add Student</h2>
             <form onSubmit={this.handleAddStudent}>
               <label htmlFor="name">Name: </label>
@@ -69,7 +69,7 @@ class AddStudent extends Component {
             </form>
             {msg && <p>{msg}</p>}
           </div>
-        </main>
+        </main> 
       </>
     );
   }
