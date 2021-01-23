@@ -45,12 +45,15 @@ const AllStudent = () => {
     return <Loader type="Rings" color="#00BFFF" height={80} width={80} />;
   return (
     <div>
-      <OrderByStudent setSortStudent={setSortStudent} sort={sort} />
-      <SortByName
-        sortData={sortData}
-        setSortDataByNameAndCohort={setSortDataByNameAndCohort}
-      />
+      <div className="student__sort__wrapper">
+        <OrderByStudent setSortStudent={setSortStudent} sort={sort} />
+        <SortByName
+          sortData={sortData}
+          setSortDataByNameAndCohort={setSortDataByNameAndCohort}
+        />
+      </div>
       <DisplayStudent
+      
         handleDelete={handleDelete}
         students={students.students}
       />

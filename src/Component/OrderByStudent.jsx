@@ -2,17 +2,22 @@ import React from "react";
 
 const OrderByStudent = (props) => {
   return (
-    <section>
+    <div className="order">
       <select
         value={props.sort}
+        className="select__order"
         onChange={(e) => {
           props.setSortStudent(e.target.value);
         }}
       >
-        <option value={"asc"}>ASC</option>
-        <option value={"desc"}>DESC</option>
+        <option className="order__opt" value={"asc"}>
+          ASC
+        </option>
+        <option className="order__opt" value={"desc"}>
+          DESC
+        </option>
       </select>
-    </section>
+    </div>
   );
 };
 

@@ -1,4 +1,9 @@
 @import "./style/button";
+thead th,
+tfoot th {
+  font-family: "Rock Salt", cursive;
+}
+
 .App {
   margin: 2rem;
   .navbar {
@@ -41,7 +46,7 @@
       .landing__text__p {
         line-height: 1.6;
       }
-      .landing__btn{
+      .landing__btn {
         font-size: 20px;
       }
     }
@@ -60,6 +65,60 @@
         margin-left: 50px;
         position: absolute;
       }
+    }
+  }
+  .student__sort__wrapper {
+    display: flex;
+    justify-content: flex-end;
+    text-align: center;
+    margin-right: 6rem;
+    .order {
+      margin-right: 1rem;
+      font-size: 13px;
+      .select__order {
+        padding: $padding-order;
+        cursor: pointer;
+        background-color: $secondary-color;
+        border-radius: 4px;
+        .order__opt {
+          background-color: #fff;
+          font-size: 15px;
+        }
+      }
+      .select__order:hover,
+      .select__order:focus {
+        outline: none;
+        border: 1px solid black;
+      }
+    }
+    .sort {
+      margin-right: 1rem;
+      font-size: 13px;
+      .select__sort {
+        padding: $padding-order;
+        cursor: pointer;
+        background-color: $secondary-color;
+        border-radius: 4px;
+        .sort__opt {
+          background-color: #fff;
+          font-size: 15px;
+        }
+      }
+    }
+    .select__sort:hover,
+    .select__sort:focus {
+      outline: none;
+      border: 1px solid black;
+    }
+  }
+  .student {
+    margin: auto;
+    text-align: center;
+    table-layout: fixed;
+    margin-top: 1rem;
+    width: 80%;
+    border: 1px solid $third-color;
+    .student__head {
     }
   }
   .footer {

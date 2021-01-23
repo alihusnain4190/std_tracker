@@ -6,8 +6,8 @@ const DisplayStudent = ({ students, handleDelete }) => {
   };
   return (
     <div>
-      <table>
-        <thead>
+      <table className="student">
+        <thead className="student__head">
           <tr>
             <th>Student Name</th>
 
