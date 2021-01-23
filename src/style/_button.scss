@@ -1,0 +1,30 @@
+@import "variables";
+.btn {
+  display: inline-block;
+
+  text-decoration: none;
+  text-align: center;
+  border: none;
+}
+.btn__add {
+  padding: $padding-add;
+  border-radius: $border-radius;
+  background-color: $primary-color;
+  color: $secondary-color;
+  transition: 2s;
+}
+.btn__add:hover {
+  background-color: #f70712;
+}
+
+/*** RAEDMORE***/
+.btn__read {
+  padding: $padding-read;
+  border-radius: $border-radius;
+  background-color: $primary-color;
+  color: $secondary-color;
+  transition: 2s;
+}
+.btn__read:hover {
+  background-color: #f70712;
+}

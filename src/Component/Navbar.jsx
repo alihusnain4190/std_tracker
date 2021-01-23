@@ -3,23 +3,43 @@ import { Link } from "@reach/router";
 
 const Navbar = () => {
   return (
-    <div>
-      <Link to="/">
-        <h1>Northcoder</h1>
-      </Link>
+    <section className="navbar">
       <div>
-        <Link to="/students">All Student</Link>
+        <div>
+          <Link to="/" style={{ textDecoration: "none" }}>
+            <h1 className="nav__logo">Northcoders</h1>
+          </Link>
+        </div>
+      </div>
+      <div className="navbar__page__wrapper">
+        <div className="nav__list">
+          <Link to="/students" style={{ textDecoration: "none" }}>
+            <span className="nav__list__item">Students</span>
+          </Link>
+        </div>
+        <div className="nav__list">
+          <Link to="/graduate" style={{ textDecoration: "none" }}>
+            <span className="nav__list__item"> Graduate</span>
+          </Link>
+        </div>
+        <div className="nav__list">
+          <Link to="/block" style={{ textDecoration: "none" }}>
+            <span className="nav__list__item"> Block</span>
+          </Link>
+        </div>
       </div>
       <div>
-        <Link to="/graduate">Graduate</Link>
+        <div className="navbar__btn__wrapper">
+          <Link
+            to="/add"
+            className="btn btn__add"
+            style={{ textDecoration: "none" }}
+          >
+            <span className="nav__btn"> Add Student   &#62; </span>
+          </Link>
+        </div>
       </div>
-      <div>
-        <Link to="/block">Block</Link>
-      </div>
-      <div>
-        <Link to="/add">Add Student</Link>
-      </div>
-    </div>
+    </section>
   );
 };
 

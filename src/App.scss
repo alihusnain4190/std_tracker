@@ -1,0 +1,71 @@
+@import "./style/button";
+.App {
+  margin: 2rem;
+  .navbar {
+    display: flex;
+    justify-content: space-evenly;
+    align-content: center;
+    align-items: center;
+    .nav__logo {
+      color: $primary-color;
+      font-size: 3rem;
+    }
+    .navbar__page__wrapper {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      .nav__list {
+        padding: 20px;
+        font-size: 20px;
+        .nav__list__item {
+          color: $third-color;
+          font-size: 25px;
+        }
+      }
+    }
+    .navbar__btn__wrapper {
+      align-items: center;
+      .nav__btn {
+        font-size: 20px;
+      }
+    }
+  }
+  .landing {
+    margin-top: 4rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-content: center;
+    position: relative;
+    .landing__text {
+      width: 50%;
+      .landing__text__p {
+        line-height: 1.6;
+      }
+      .landing__btn{
+        font-size: 20px;
+      }
+    }
+    .landing__img__wrapper {
+      .after__image {
+        width: 300px;
+        height: 300px;
+        position: relative;
+        background-color: $primary-color;
+        z-index: -1;
+        transform: rotate(-13.95deg);
+      }
+      .landing__img {
+        width: 300px;
+        height: 300px;
+        margin-left: 50px;
+        position: absolute;
+      }
+    }
+  }
+  .footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+}

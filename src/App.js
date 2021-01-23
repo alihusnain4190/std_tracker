@@ -1,4 +1,4 @@
-import "./App.css";
+import "./App.scss";
 
 import { Router } from "@reach/router";
 import { Navbar, Footer, Error } from "./Component/index";
@@ -10,11 +10,6 @@ import {
   StudentInBlock,
   AddStudent,
 } from "./Pages/index";
-// import AllStudent from "./Pages/AllStudent";
-// import GraduateStudent from "./Pages/GraduateStudent";
-// import StudentInBlock from "./Pages/StudentInBlock";
-// import UpdateStudent from "./Pages/UpdateStudent";
-// import AddStudent from "./Pages/AddStudent";
 
 function App() {
   return (
