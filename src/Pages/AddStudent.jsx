@@ -44,32 +44,52 @@ class AddStudent extends Component {
     return (
       <>
         <main>
-          <div >
+          <div>
             <h2>Add Student</h2>
-            <form onSubmit={this.handleAddStudent}>
-              <label htmlFor="name">Name: </label>
-              <input
-                id="name"
-                type="text"
-                name="name"
-                value={name}
-                onChange={this.handleChange}
-              />
+            <form onSubmit={this.handleAddStudent} className="form">
+              <div className="row">
+                <div className="col-25">
+                  <label htmlFor="name">Name: </label>
+                </div>
+                <div className="col-75">
+                  <input
+                    className="text"
+                    id="name"
+                    type="text"
+                    name="name"
+                    placeholder="Enter student name"
+                    value={name}
+                    onChange={this.handleChange}
+                  />
+                </div>
+              </div>
 
-              <label htmlFor="cohort">Starting Cohort: </label>
-              <input
-                id="cohort"
-                type="text"
-                name="startingCohort"
-                value={startingCohort}
-                onChange={this.handleChange}
-              />
-
-              <button className="btn">Add Student</button>
+              <div className="row">
+                <div className="col-25">
+                  <label htmlFor="cohort">Cohort :</label>
+                </div>
+                <div className="col-75">
+                  <input
+                    className="text"
+                    placeholder="enter starting cohort"
+                    id="cohort"
+                    type="number"
+                   step="1"
+                    name="startingCohort"
+                    value={startingCohort}
+                    onChange={this.handleChange}
+                  />
+                </div>
+              </div>
+              <div class="row">
+                <button className="btn btn__submit" type="submit">
+                  Submit
+                </button>
+              </div>
             </form>
             {msg && <p>{msg}</p>}
           </div>
-        </main> 
+        </main>
       </>
     );
   }

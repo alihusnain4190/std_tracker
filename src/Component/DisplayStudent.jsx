@@ -24,7 +24,9 @@ const DisplayStudent = ({ students, handleDelete }) => {
               <td>{std.startingCohort}</td>
               <td>{studentBlock(std.currentBlock)}</td>
               <td>
-                <button onClick={() => handleID(std._id)}>Delete</button>
+                <button className="btn btn__delete" onClick={() => handleID(std._id)}>
+                  Delete
+                </button>
               </td>
             </tr>
           ))}

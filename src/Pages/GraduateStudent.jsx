@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Loader from "react-loader-spinner";
 
 import axios from "axios";
-import {SortByName,OrderByStudent,DisplayStudent} from "../Component/index";
+import { SortByName, OrderByStudent, DisplayStudent } from "../Component/index";
 const GraduateStudent = () => {
   const [graduate, setGraduate] = useState([]);
   const [isLoading, setLoading] = useState(true);
@@ -47,11 +47,13 @@ const GraduateStudent = () => {
   if (error) return error;
   return (
     <section>
-      <OrderByStudent setSortStudent={setSortStudent} sort={sort} />
-      <SortByName
-        sortData={sortData}
-        setSortDataByNameAndCohort={setSortDataByNameAndCohort}
-      />
+      <div className="student__sort__wrapper">
+        <OrderByStudent setSortStudent={setSortStudent} sort={sort} />
+        <SortByName
+          sortData={sortData}
+          setSortDataByNameAndCohort={setSortDataByNameAndCohort}
+        />
+      </div>
       <DisplayStudent
         handleDelete={handleDelete}
         students={graduate.students}

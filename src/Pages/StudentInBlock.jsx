@@ -54,22 +54,37 @@ const StudentInBlock = () => {
   if (error) return error;
   return (
     <section>
-      <div>
-        <select value={section} onChange={handleChange}>
-          <option value="fun">Fundamentals</option>
-          <option value="be">Backend</option>
-          <option value="fe">Frontend</option>
-          <option value="proj">Project</option>
-          <option value="grad">graduate</option>
-        </select>
+      <div className="student__sort__wrapper">
+        <div className="block">
+          <select
+            className="select__block"
+            value={section}
+            onChange={handleChange}
+          >
+            <option className="block__opt" value="fun">
+              Fundamentals
+            </option>
+            <option className="block__opt" value="be">
+              Backend
+            </option>
+            <option className="block__opt" value="fe">
+              Frontend
+            </option>
+            <option className="block__opt" value="proj">
+              Project
+            </option>
+            <option className="block__opt" value="grad">
+              graduate
+            </option>
+          </select>
+        </div>
+
+        <OrderByStudent setSortStudent={setSortStudent} sort={sort} />
+        <SortByName
+          sortData={sortData}
+          setSortDataByNameAndCohort={setSortDataByNameAndCohort}
+        />
       </div>
-
-      <OrderByStudent setSortStudent={setSortStudent} sort={sort} />
-      <SortByName
-        sortData={sortData}
-        setSortDataByNameAndCohort={setSortDataByNameAndCohort}
-      />
-
       <DisplayStudent students={block} handleDelete={handleDelete} />
     </section>
   );

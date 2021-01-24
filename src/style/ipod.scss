@@ -1,12 +1,4 @@
-@import "./style/button";
-@import "./style/ipod.scss";
-@import "./style/phone.scss";
-thead th,
-tfoot th {
-  font-family: "Rock Salt", cursive;
-}
-
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 760px) {
   .App {
     margin: 2rem;
     .navbar {
@@ -16,7 +8,7 @@ tfoot th {
       align-items: center;
       .nav__logo {
         color: $primary-color;
-        font-size: 3rem;
+        font-size: 1.5rem;
       }
       .navbar__page__wrapper {
         display: flex;
@@ -76,6 +68,7 @@ tfoot th {
       text-align: center;
       margin-right: 6rem;
       .order {
+        margin-top: 1rem;
         margin-right: 1rem;
         font-size: 13px;
         .select__order {
@@ -95,6 +88,7 @@ tfoot th {
         }
       }
       .sort {
+        margin-top: 1rem;
         margin-right: 1rem;
         font-size: 13px;
         .select__sort {
@@ -124,6 +118,7 @@ tfoot th {
       /***** table *****/
     }
     .block {
+      margin-top: 1rem;
       margin-left: 5rem;
       font-size: 13px;
       align-self: center;
@@ -185,11 +180,6 @@ tfoot th {
           margin-top: 0;
         }
       }
-    }
-    .error {
-      display: flex;
-      flex-direction: column;
-      text-align: center;
     }
     .footer__hr {
       margin-top: 2rem;
