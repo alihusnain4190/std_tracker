@@ -40,3 +40,6 @@ Enjoy!
 3) Sass
 4) Axios
 5) reach-router
+
+## Author
+  Ali Husnain https://ali-husnain.netlify.app/
