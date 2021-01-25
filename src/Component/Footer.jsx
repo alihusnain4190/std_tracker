@@ -11,24 +11,24 @@ const Footer = () => {
           </p>
         </div>
         <div>
-          <Link
-            to="https://www.facebook.com/northcoders/"
+          <a
+            href="https://www.facebook.com/northcoders/"
             style={{ textDecoration: "none" }}
           >
             <i class="fa fa-facebook"></i>
-          </Link>
-          <Link
-            to="https://twitter.com/northcoders"
+          </a>
+          <a
+            href="https://twitter.com/northcoders"
             style={{ textDecoration: "none" }}
           >
             <i class="fa fa-twitter"></i>
-          </Link>
-          <Link
-            to="https://www.youtube.com/northcoders"
+          </a>
+          <a
+            href="https://www.youtube.com/northcoders"
             style={{ textDecoration: "none" }}
           >
             <i class="fa fa-youtube"></i>
-          </Link>
+          </a>
         </div>
       </div>
     </footer>

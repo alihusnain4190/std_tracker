@@ -13,13 +13,13 @@ const Landing = () => {
           skills you need to hit the ground running in a career in tech – no
           matter your background.
         </p>
-        <Link
-          to=""
+        <a
+          href="https://northcoders.com/"
           style={{ textDecoration: "none" }}
           className="btn btn__read"
         >
-          <span className="landing__btn"> Read More &#62;  </span>
-        </Link>
+          <span className="landing__btn"> Read More &#62; </span>
+        </a>
       </div>
       <div className="landing__img__wrapper">
         <img className="landing__img" src={landing}></img>
