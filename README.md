@@ -19,11 +19,15 @@ The Git CLI
 # Installation
 
 To begin with, (fork and) clone this repo.
-$ git clone https://github.com/alihusnain4190/std_tracker
+1) $ git clone https://github.com/alihusnain4190/std_tracker
+
 Navigate into the directory and install the required dependencies.
-$ cd std_tracker
-$ npm install
+
+1)$ cd std_tracker
+2) $ npm install
+
 Get the app running on your machine.
+
 $ npm start
 A tab will be opened in your browser at the address localhost:3000.
 
@@ -31,8 +35,8 @@ Enjoy!
 
 # Built Using
 
-Create React App
-React-Hook
-Sass
-Axios
-
+1) Create React App
+2) React-Hook
+3) Sass
+4) Axios
+5) reach-router
