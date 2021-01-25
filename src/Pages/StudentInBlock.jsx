@@ -49,7 +49,15 @@ const StudentInBlock = () => {
     }
   };
   if (isLoading === true)
-    return <Loader type="Rings" color="#00BFFF" height={80} width={80} />;
+    return (
+      <Loader
+        className="loader__center"
+        type="Rings"
+        color="#00BFFF"
+        height={80}
+        width={80}
+      />
+    );
 
   if (error) return error;
   return (

@@ -181,6 +181,16 @@
         }
       }
     }
+    .loader__center {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transform: -webkit-translate(-50%, -50%);
+      transform: -moz-translate(-50%, -50%);
+      transform: -ms-;
+    }
+
     .footer__hr {
       margin-top: 2rem;
       display: block;

@@ -42,7 +42,16 @@ const AllStudent = () => {
   };
   if (error) return error;
   if (isLoading === true)
-    return <Loader type="Rings" color="#00BFFF" height={80} width={80} />;
+    return (
+      <Loader
+        className="loader__center"
+      type="Rings"
+      
+        color="#00BFFF"
+        height={80}
+        width={80}
+      />
+    );
   return (
     <div>
       <div className="student__sort__wrapper">
@@ -53,7 +62,6 @@ const AllStudent = () => {
         />
       </div>
       <DisplayStudent
-      
         handleDelete={handleDelete}
         students={students.students}
       />
